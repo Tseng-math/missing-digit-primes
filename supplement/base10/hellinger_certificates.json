@@ -1,0 +1,148 @@
+{
+  "status": "complete",
+  "mesh": 200,
+  "fixed_denominator": 268435456,
+  "description": "Exact K2 upper certificate; affine H <= (B/10^m)^(-delta)",
+  "digits": [
+    {
+      "digit": 0,
+      "reflected_digit": 9,
+      "mesh": 200,
+      "finite_K2_numerator": 68388619972808069,
+      "finite_K2_denominator": 72057594037927936,
+      "grid_witness": [
+        5,
+        "0",
+        "0"
+      ],
+      "K2_upper": "42746828132678992309/45035996273704960000",
+      "K2_target": "19/20",
+      "certified_delta": "7/1000",
+      "rho_upper_at_integers": [
+        268435456,
+        208133382,
+        118987332,
+        77563137,
+        77563137,
+        77563137,
+        77563137,
+        77563137,
+        118987332,
+        208133382
+      ],
+      "rho_denominator": 268435456
+    },
+    {
+      "digit": 1,
+      "reflected_digit": 8,
+      "mesh": 200,
+      "finite_K2_numerator": 69655953144161549,
+      "finite_K2_denominator": 72057594037927936,
+      "grid_witness": [
+        5,
+        "0",
+        "0"
+      ],
+      "K2_upper": "43538911364774917309/45035996273704960000",
+      "K2_target": "967/1000",
+      "certified_delta": "3/625",
+      "rho_upper_at_integers": [
+        268435456,
+        198676311,
+        122059435,
+        131950638,
+        159236328,
+        169788195,
+        159236328,
+        131950638,
+        122059435,
+        198676311
+      ],
+      "rho_denominator": 268435456
+    },
+    {
+      "digit": 2,
+      "reflected_digit": 7,
+      "mesh": 200,
+      "finite_K2_numerator": 68870442168277464,
+      "finite_K2_denominator": 72057594037927936,
+      "grid_witness": [
+        5,
+        "0",
+        "0"
+      ],
+      "K2_upper": "5380995875605920523/5629499534213120000",
+      "K2_target": "239/250",
+      "certified_delta": "3/500",
+      "rho_upper_at_integers": [
+        268435456,
+        213460321,
+        171612216,
+        180975202,
+        149196783,
+        121197514,
+        149196783,
+        180975202,
+        171612216,
+        213460321
+      ],
+      "rho_denominator": 268435456
+    },
+    {
+      "digit": 3,
+      "reflected_digit": 6,
+      "mesh": 200,
+      "finite_K2_numerator": 69290201621818309,
+      "finite_K2_denominator": 72057594037927936,
+      "grid_witness": [
+        5,
+        "0",
+        "0"
+      ],
+      "K2_upper": "43310316663310392309/45035996273704960000",
+      "K2_target": "481/500",
+      "certified_delta": "11/2000",
+      "rho_upper_at_integers": [
+        268435456,
+        222880245,
+        186013081,
+        149145919,
+        126360762,
+        149145920,
+        126360762,
+        149145919,
+        186013081,
+        222880245
+      ],
+      "rho_denominator": 268435456
+    },
+    {
+      "digit": 4,
+      "reflected_digit": 5,
+      "mesh": 200,
+      "finite_K2_numerator": 69438513832930319,
+      "finite_K2_denominator": 72057594037927936,
+      "grid_witness": [
+        5,
+        "0",
+        "0"
+      ],
+      "K2_upper": "43403011795255398559/45035996273704960000",
+      "K2_target": "241/250",
+      "certified_delta": "53/10000",
+      "rho_upper_at_integers": [
+        268435456,
+        236734453,
+        188810720,
+        161788160,
+        154407653,
+        157842087,
+        154407653,
+        161788160,
+        188810720,
+        236734453
+      ],
+      "rho_denominator": 268435456
+    }
+  ]
+}
