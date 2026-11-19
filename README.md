@@ -1,55 +1,23 @@
-# Missing-digit primes in bases eight through eleven
+# Missing-digit primes in bases six through eleven
 
-**Tseng**
+**Tseng** · [Paper (PDF)](missing_digit_primes.pdf) · [LaTeX source](missing_digit_primes.tex)
 
-The paper proves two-sided prime counts of the expected order of magnitude in bases 8 and 9, and exact asymptotic formulas in bases 10 and 11. Both results hold for every omitted digit and arbitrary real endpoints.
+For each single omission in bases 6–9, and each of the 45 pairs of omitted decimal digits, the paper obtains two-sided bounds of order `A(x)/log x`, where `A(x)` counts admissible positive integers below the real endpoint `x`. These five families share a grouped-product sieve; the available comparisons and the resulting sieve losses differ. For one omission in base 10 or 11 the result is an asymptotic equivalent, with the local factor from the allowed units digits. All counts use ordinary expansions, without leading zeros.
 
-- [Manuscript (PDF)](missing_digit_primes_8_11.pdf)
-- [Complete LaTeX source](missing_digit_primes_8_11.tex)
-- [Verification programs and certificate data](supplement/)
+## Build the paper
 
-## Build the PDF
+Run `tectonic missing_digit_primes.tex`, or run `latexmk -xelatex missing_digit_primes.tex` with a TeX installation providing the Latin Modern OpenType fonts. The bibliography is embedded in the source; BibTeX, external figures and numerical verification are not required to compile it.
 
-With Tectonic installed, run the following from the repository root. Tectonic may download its TeX bundle on the first build.
+## Reproduce the finite calculations
 
-```sh
-mkdir -p build
-tectonic --untrusted --outdir build missing_digit_primes_8_11.tex
-```
-
-The rebuilt PDF is written to `build/missing_digit_primes_8_11.pdf`.
-
-## Reproduce the certificate checks
-
-The verifiers use Python 3.8 or later and its standard library. The base-nine check also requires `g++` with C++17 and `unsigned __int128` support. Run with assertions enabled from a writable copy of the repository.
+From a writable extracted copy, with Python 3.12 and a C++17 compiler supporting `unsigned __int128`:
 
 ```sh
-python3 -B -S supplement/verify.py
+python3 -IBS supplement/verify.py all
 ```
 
-The command recomputes the finite certificates for bases 8 through 11 and prints `All numerical certificates verified.` on success. The base-nine verifier removes its temporary build files after the check. The individual scripts can also be run with `python3 -B -S` followed by the script path.
+The script requires only the Python standard library, with assertions enabled. It invokes `c++` by default; set `CXX` to another compiler executable if needed. No network connection is required. Exact nodal and dual witnesses are included as readable data in the Python sources. Intermediate files are created in a temporary directory and removed on completion.
 
-| Base | Certificate checks |
-| --- | --- |
-| 8 | [First moment](supplement/base8/verify_first_moment.py), [moment of order 127/64](supplement/base8/verify_near_parseval.py), and [exponent and sieve inequalities](supplement/base8/verify_exponents.py) |
-| 9 | [Fourier moments and complete-tuple sieve loss](supplement/base9/verify_base9.py) |
-| 10 | [Moments, affine correlations, and Type II exponent inequalities](supplement/base10/verify_base10.py) |
-| 11 | [Moments and affine correlations](supplement/base11/verify_base11.py) |
+To check a single group, replace `all` with `base6`, `base7`, `base8`, `base9`, `base10`, `base11`, `decimal_two`, or `common_sieve`. The full run checks the digital inequalities, rational systems and upper sums, and ends with `PASS: all numerical certificates verified.` It verifies the finite premises of the proofs, not the analytic arguments by computer.
 
-## Citation
-
-Tseng. *Missing-digit primes in bases eight through eleven*. Manuscript.
-
-```bibtex
-@unpublished{TsengMissingDigitPrimes,
-  author = {Tseng},
-  title  = {Missing-digit primes in bases eight through eleven},
-  note   = {Manuscript}
-}
-```
-
-Machine-readable citation metadata is available in [CITATION.cff](CITATION.cff).
-
-## AI Disclosure
-
-The author selected the research topic; artificial intelligence completed all mathematical derivations, proofs, and writing.
+AI Disclosure: The author selected the research topic; artificial intelligence completed all mathematical derivations, proofs, and writing.
